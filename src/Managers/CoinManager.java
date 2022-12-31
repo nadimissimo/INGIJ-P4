@@ -6,25 +6,28 @@ import java.util.ArrayList;
 import java.util.List;
 
 public interface CoinManager {
-     /**
-      * Liste beinhaltet alle Coins auf dem Spielfeld
-      */
-     List<Coin> CoinArray = new ArrayList<>();
+     
+	
+	
+	/**
+	 * Konstruktor erstellt Coinmanager mit einer leeren Liste mit dem Datentyp Coin
+	 */
+	CoinManager Coinmanager();
 
      /**
       * Erstellt eine neues Münzobjekt an der Position, an der ein Gegnerobjekt gelöscht wird und speichert es in einer Liste ab
+      * @param Position der Muenze
       * @return Coin
       */
-     Coin createCoin();
+     Coin createCoin(int Positionx, int Positiony);
 
      /**
       * Löscht ein Coinobjekt aus der Liste
-      *
       */
      void deleteCoin(Coin coin);
 
      /**
-      * Gibt Anzahl er Münzen im Münzarrray zurück
+      * Gibt Anzahl der Münzen aus der Liste zurück
       * @return Anzahl der Münzen
       */
      Integer getCoinArrayLength();

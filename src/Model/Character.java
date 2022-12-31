@@ -1,90 +1,95 @@
 package Model;
 
+import java.awt.Taskbar.State;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 
-public class Character {
+import Variables.Direction;
 
-    public Character(){};       // Character random platzieren?
+public interface Character {
+	
+	
+	/**
+	 * Konstuktor erstellt den Sielercharakter. Der Charakter wird in der Mitte des Bildschirms platziert und schaut nach unten.
+	 * Der Coinscore wird auf 0 gesetzt
+	 */
+    Character Character(int Healthpoints, int Positionx, int Positiony, int Movementspeed, int AtackPower, int Atackspeed);       
 
-    private int Healthpoints=100;
 
-    private float Position;
+    /**
+     * @return Anzhal der Lebenspunkte
+     */
+     int getHealthpoints();
+     
+     /**
+      * @param healthpoints
+      */
+     void setHealthpoints(int healthpoints);
 
-    private Vector Direction;
+     /**
+      * @return aktuelle x-Position des Characters
+      */
+     int getPositionX();
+     
+     /**
+      * @return aktuelle y-Position des Characters
+      */
+     int getPositionY();
 
-    private int Movementspeed=100;
+     /**
+      * @param position
+      */
+     void setPosition(int positionx,int positiony);
 
-    private int AtackPower=100;
+     /**
+      * @return Bewegungsrichtung(Blickrichtung) des Charakters
+      */
+     Direction getDirection();
 
-    private int AtackSpeed=100;
+     /**
+      * @param direction(Blickrichtung)
+      */
+     void setDirection(Direction direction);
 
-    private int Coinscore=0;
+     /**
+      * @return maximale Bewegungsgeschwindigkeit des Charakters
+      */
+     int getMovementspeed();
 
-    private int Highscore=0;
+     /**
+      * @param movementspeed
+      */
+     void setMovementspeed(int movementspeed);
+     
+     /**
+      * @return aktuelle Angriffskraft des Charakters
+      */
+     int getAtackPower();
 
-    public int getHealthpoints() {
-        return Healthpoints;
-    }
+     /**
+      * @param atackPower
+      */
+     void setAtackPower(int atackPower);
 
-    public void setHealthpoints(int healthpoints) {
-        Healthpoints = healthpoints;
-    }
+     /**
+      * @return aktuelle Angriffsgeschwindigkeit des Charakters
+      */
+     int getAtackSpeed();
 
-    public float getPosition() {
-        return Position;
-    }
+     /**
+      * @param atackSpeed
+      */
+     void setAtackSpeed(int atackSpeed);
+     
+     /**
+      * @return aktueller Coinscore des Charakters
+      */
+     int getCoinscore();
 
-    public void setPosition(float position) {
-        Position = position;
-    }
+     /**
+      * @param coinscore
+      */
+     void setCoinscore(int coinscore);
 
-    public Vector getDirection() {
-        return Direction;
-    }
-
-    public void setDirection(Vector direction) {
-        Direction = direction;
-    }
-
-    public int getMovementspeed() {
-        return Movementspeed;
-    }
-
-    public void setMovementspeed(int movementspeed) {
-        Movementspeed = movementspeed;
-    }
-
-    public int getAtackPower() {
-        return AtackPower;
-    }
-
-    public void setAtackPower(int atackPower) {
-        AtackPower = atackPower;
-    }
-
-    public int getAtackSpeed() {
-        return AtackSpeed;
-    }
-
-    public void setAtackSpeed(int atackSpeed) {
-        AtackSpeed = atackSpeed;
-    }
-
-    public int getCoinscore() {
-        return Coinscore;
-    }
-
-    public void setCoinscore(int coinscore) {
-        Coinscore = coinscore;
-    }
-
-    public int getHighscore() {
-        return Highscore;
-    }
-
-    public void setHighscore(int highscore) {
-        Highscore = highscore;
-    }
 }

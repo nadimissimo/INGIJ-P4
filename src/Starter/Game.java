@@ -1,13 +1,24 @@
 package Starter;
 
+import Managers.CoinManager;
+import Managers.CollisionManager;
+import Managers.ProjectileManager;
+import Managers.WaveManager;
+import Model.ObjectCollection;
+
 public interface Game {
 
+	
+	
+	/**
+	 * Knstruktor initialisiert die Manager, das Jframe und alle Objekte  
+	 * Game Klasse ist erster Aufruf der main
+	 */
+	Game Game(Character ch, CoinManager coinm, CollisionManager cm, ProjectileManager pm, WaveManager wm, ObjectCollection oc);
 
-
-     float globalTimer = 0;
 
      /**
-      * Initialisiert das JFrame, Bildobjekte und alle relevanten Klassen
+      * startet den Timer und initialisiert die erste Gegnerwelle. Nach definiertem Intervall werden Gegnerwellen erzeugt
       */
      void start_game();
      /**
@@ -20,7 +31,6 @@ public interface Game {
       * Benachrichtigt Projektilmanager ein Projektil zu erzeugen
       */
      void Mouse_Event();
-
 
      /**
       * Initialisiert in Abhängigkeit des globalTimers neue Gegnerwellen

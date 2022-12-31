@@ -8,22 +8,22 @@ import java.util.List;
 public interface ProjectileManager {
 
 
-     /**
-      * Liste aller Projektile
-      */
-     List<Projectile> ProjectileArray = new ArrayList<>();
+	/**
+	 * Konstruktor erstellt leere Liste vom Datentyp Projektil
+	 */
+	ProjectileManager ProjectileManager();
 
      /**
       * Erstellt ein neues Projektilobjekt an der Position des Spielers,
       * Projektilrichtung ist die Richtung des Mauszeigers
       * @return Projectile
       */
-     Projectile createProjectile();
+     Projectile createProjectile(int Positionx, int Positiony);
 
      /**
       * Löscht das ProjektilObjekt
       */
-     Projectile deleteProjectile();
+     void deleteProjectile();
 
      /**
       * Löscht alle Projektile aus dem Projektilarray

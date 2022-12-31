@@ -2,6 +2,12 @@ package Managers;
 
 public interface CollisionManager {
 
+	
+	
+	/**
+	 * Konstruktor tellt die Funktionen für die Kollisionsüberprüfung bereit
+	 */
+	CollisionManager CollisionManager();
 
      /**
       * Kalkuliert die Positionen aller Objekte mit jedem Zeitintervall neu

@@ -2,47 +2,56 @@ package Model;
 
 import java.util.Vector;
 
-public class Projectile {
+import Variables.ProjectileDirection;
 
-    public Projectile(){};
+public interface Projectile {
 
-    private float Position;
+	/**
+	 * Konstuktor erstellt Objekt am Ort des Characters mit Bewegungsrichtung zur Maus
+	 */
+	Projectile Projectile(int Positionx, int Positiony, int mousepositionx, int mousepositiony, int Movementspeed, int Atackpower);
 
-    private Vector Direction;
 
-    private int MovementSpeed;
+	/**
+	 * 
+	 * @return aktuelle Position des projektils
+	 */
+     float getPosition();
 
-    private int AtackPower;
+     /**
+      * 
+      * @param position
+      */
+     void setPosition(float position);
 
-    public float getPosition() {
-        return Position;
-    }
+     /**
+      * @return Bewegungsrichtung des Projektils
+      */
+     int getDirection();
 
-    public void setPosition(float position) {
-        Position = position;
-    }
-
-    public Vector getDirection() {
-        return Direction;
-    }
-
-    public void setDirection(Vector direction) {
-        Direction = direction;
-    }
-
-    public int getMovementSpeed() {
-        return MovementSpeed;
-    }
-
-    public void setMovementSpeed(int movementSpeed) {
-        MovementSpeed = movementSpeed;
-    }
-
-    public int getAtackPower() {
-        return AtackPower;
-    }
-
-    public void setAtackPower(int atackPower) {
-        AtackPower = atackPower;
-    }
+     /**
+      * @param direction
+      */
+     void setDirection(ProjectileDirection direction);
+    
+     /**
+      * @return aktulle Bewegungsgeschwindigkeit des Projektils
+      */
+     int getMovementSpeed();
+     
+     /**
+      * @param movementSpeed
+      */
+     void setMovementSpeed(int movementSpeed);
+     
+     /**
+      * @return aktuller Angriffsschaden des Projektils
+      */
+     int getAtackPower();
+     
+     /**
+      * @param atackPower
+      */
+     void setAtackPower(int atackPower);
+     
 }

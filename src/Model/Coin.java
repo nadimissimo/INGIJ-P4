@@ -1,28 +1,31 @@
 package Model;
 
-public class Coin {
+public interface Coin {
 
-    public Coin(){};
+	/**
+	 * Konstruktor erzeugt ein Coinobjekt mit dem Wert 1
+	 * @param Position, an der die Muenze erscheint
+	 */
+     Coin Coin(int Positionx, int Positiony);
 
-    private float Position;
 
-    private int Value=1;
+     /**
+      * @return Position der Muenze
+      */
+     float getPosition();
 
+     /**
+      * @param Position der Muenze
+      */
+     void setPosition(float position);
 
+     /**
+      * @return Wert der Muenze
+      */
+     int getValue();
 
-    public float getPosition() {
-        return Position;
-    }
-
-    public void setPosition(float position) {
-        Position = position;
-    }
-
-    public int getValue() {
-        return Value;
-    }
-
-    public void setValue(int value) {
-        Value = value;
-    }
+     /**
+      * @param value der Muenze
+      */
+     void setValue(int value);
 }

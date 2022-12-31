@@ -8,18 +8,16 @@ import java.util.List;
 
 public interface WaveManager {
 
-     /**
-      * beinhaltet alle Gegnerwellen
-      */
-     List<Wave> EnemyWave= new ArrayList<>();
+	/**
+	 * Konstruktor erstellt eine leere Liste vom Datentyp Welle und setzt den Wellenzähler auf 0
+	 */
+	WaveManager WaveManager();
+	
+   
 
      /**
-      * Nummer der Welle
-      */
-     Integer WaveCounter=0;
-
-     /**
-      * erstellt eine neue Wave mit Gegnern
+      * erstellt eine neue Wave mit Gegnern abhängig vom Wellenzähler und speichert Sie in einer Liste
+      * erhoeht den Wellenzaehler
       * @return Wave
       */
      Wave createWave();
@@ -42,7 +40,6 @@ public interface WaveManager {
      void clearWaveArray();
 
      /**
-      *
       * @return Anzahl der Gegnerobjekte des gewünschten WaveArrays
       */
      Integer getWaveArrayLength(Wave wave);
